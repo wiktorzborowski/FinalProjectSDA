@@ -16,6 +16,8 @@ public class Hooks {
 
     @After
     public void DestroyWebDriver(){
+
+
         BaseDriver.DestroyDriver();
     }
 }

@@ -1,11 +1,14 @@
 package devToTests;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 import pages.*;
+import testingUtils.ScenarioData;
 
 import static org.junit.Assert.assertTrue;
 
@@ -67,5 +70,11 @@ public class StepDefinitions {
     public void iCanStopPodcast() {
         podcastPage.StopPodcast();
         assertTrue(podcastPage.GetPausedStatus());
+    }
+
+    @After
+    public void tearDown(Scenario scenario){
+        ScenarioData.scenarioName = scenario.getName();
+        ScenarioData.scenarioStatus = scenario.getStatus();
     }
 }
