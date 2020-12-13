@@ -1,4 +1,4 @@
-Feature: DevTo page navigation
+Feature: Basic dev to tests
 
   Scenario: Enter the first message on Weekly tab
     Given Home page is open
